@@ -1,0 +1,86 @@
+$game-color-grey: #C0C0C0;
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.loading-wrapper {
+    h3 {
+        color: white;
+        text-align: center;
+    }
+}
+
+.dark-wrapper {
+    background-color: rgba(5, 5, 5, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 101;
+}
+
+.board-wrapper{
+    margin-top: 20px;
+    background-color: $game-color-grey;
+
+    .board {
+        min-width: 300px;
+        min-height: 500px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex-direction: column;
+        padding: 5px;
+    }
+
+    .board-head {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .restart-btn-img {
+            width: 30px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .left-side, .right-side, .middle-side {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .left-side{
+            justify-content: start;
+        }
+
+        .right-side{
+            justify-content: end;
+        }
+
+        .clock {
+            height: 40px;
+            flex: 1;
+            opacity: 0.8;
+        }
+    }
+}

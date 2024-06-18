@@ -3,16 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <title>MinesWeeper</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" integrity="sha512-dPXYcDub/aeb08c63jRq/k6GaKccl256JQy/AnOq7CAnEZ9FzSL9wSbcZkMp4R26vBsMLFYH4kQ67/bbV8XaCQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.min.css" />
 </head>
 <body>
+
+<div class="board-wrapper">
+    <div class="board">
+        <div class="board-head">
+            <div class="left-side">
+                <div class="mines-number-wrapper">
+
+                </div>
+                <div class="actions-wrapper">
+
+                </div>
+            </div>
+            <div class="middle-side">
+                <div class="restart-btn-wrapper">
+                    <img src="src/images/happy-face.svg" alt="happy face" class="restart-btn-img">
+                    <img src="src/images/dead-face.svg" alt="dead face" class="restart-btn-img d-none">
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="switch-marker-btn-wrapper">
+
+                </div>
+                <div class="time-passing-wrapper">
+                    <div class="time-passing">
+                        <svg class='clock' id='"+id+"' viewBox='0 36 122 36' xmlns='http://www.w3.org/2000/svg'>
+                            <g id='seconds'>
+                                <g>
+                                    <path id='f7' d='M106,69l3-3h6l3,3c0,0-1,1-3,1h-6C107,70,106,69,106,69z'/>
+                                    <path id='f6' d='M119,55l-3,2v8l3,3c0,0,1-1,1-3v-7C120,56,119,55,119,55z'/>
+                                    <path id='f5' d='M105,55l3,2v8l-3,3c0,0-1-1-1-3v-7C104,56,105,55,105,55z'/>
+                                    <polygon id='f4' points='109,52 115,52 118,54 115,56 109,56 106,54'/>
+                                    <path id='f3' d='M119,40l-3,3v8l3,2c0,0,1-1,1-3v-7C120,41,119,40,119,40z'/>
+                                    <path id='f2' d='M105,40l3,3v8l-3,2c0,0-1-1-1-3v-7C104,41,105,40,105,40z'/>
+                                    <path id='f1' d='M106,39l3,3h6l3-3c0,0-1-1-3-1h-6C107,38,106,39,106,39z'/>
+                                </g>
+                                <g>
+                                    <path id='e7' d='M88,69l3-3h6l3,3c0,0-1,1-3,1h-6C89,70,88,69,88,69z'/>
+                                    <path id='e6' d='M101,55l-3,2v8l3,3c0,0,1-1,1-3v-7C102,56,101,55,101,55z'/>
+                                    <path id='e5' d='M87,55l3,2v8l-3,3c0,0-1-1-1-3v-7C86,56,87,55,87,55z'/>
+                                    <polygon id='e4' points='91,52 97,52 100,54 97,56 91,56 88,54'/>
+                                    <path id='e3' d='M101,40l-3,3v8l3,2c0,0,1-1,1-3v-7C102,41,101,40,101,40z'/>
+                                    <path id='e2' d='M87,40l3,3v8l-3,2c0,0-1-1-1-3v-7C86,41,87,40,87,40z'/>
+                                    <path id='e1' d='M88,39l3,3h6l3-3c0,0-1-1-3-1h-6C89,38,88,39,88,39z'/>
+                                </g>
+                            </g>
+                            <g id='minutes'>
+                                <g>
+                                    <path id='d7' d='M64,69l3-3h6l3,3c0,0-1,1-3,1h-6C65,70,64,69,64,69z'/>
+                                    <path id='d6' d='M77,55l-3,2v8l3,3c0,0,1-1,1-3v-7C78,56,77,55,77,55z'/>
+                                    <path id='d5' d='M63,55l3,2v8l-3,3c0,0-1-1-1-3v-7C62,56,63,55,63,55z'/>
+                                    <polygon id='d4' points='67,52 73,52 76,54 73,56 67,56 64,54'/>
+                                    <path id='d3' d='M77,40l-3,3v8l3,2c0,0,1-1,1-3v-7C78,41,77,40,77,40z'/>
+                                    <path id='d2' d='M63,40l3,3v8l-3,2c0,0-1-1-1-3v-7C62,41,63,40,63,40z'/>
+                                    <path id='d1' d='M64,39l3,3h6l3-3c0,0-1-1-3-1h-6C65,38,64,39,64,39z'/>
+                                </g>
+                                <g>
+                                    <path id='c7' d='M46,69l3-3h6l3,3c0,0-1,1-3,1h-6C47,70,46,69,46,69z'/>
+                                    <path id='c6' d='M59,55l-3,2v8l3,3c0,0,1-1,1-3v-7C60,56,59,55,59,55z'/>
+                                    <path id='c5' d='M45,55l3,2v8l-3,3c0,0-1-1-1-3v-7C44,56,45,55,45,55z'/>
+                                    <polygon id='c4' points='49,52 55,52 58,54 55,56 49,56 46,54'/>
+                                    <path id='c3' d='M59,40l-3,3v8l3,2c0,0,1-1,1-3v-7C60,41,59,40,59,40z'/>
+                                    <path id='c2' d='M45,40l3,3v8l-3,2c0,0-1-1-1-3v-7C44,41,45,40,45,40z'/>
+                                    <path id='c1' d='M46,39l3,3h6l3-3c0,0-1-1-3-1h-6C47,38,46,39,46,39z'/>
+                                </g>
+                            </g>
+                            <g id='hours'>
+                                <g>
+                                    <path id='b7' d='M22,69l3-3h6l3,3c0,0-1,1-3,1h-6C23,70,22,69,22,69z'/>
+                                    <path id='b6' d='M35,55l-3,2v8l3,3c0,0,1-1,1-3v-7C36,56,35,55,35,55z'/>
+                                    <path id='b5' d='M21,55l3,2v8l-3,3c0,0-1-1-1-3v-7C20,56,21,55,21,55z'/>
+                                    <polygon id='b4' points='25,52 31,52 34,54 31,56 25,56 22,54'/>
+                                    <path id='b3' d='M35,40l-3,3v8l3,2c0,0,1-1,1-3v-7C36,41,35,40,35,40z'/>
+                                    <path id='b2' d='M21,40l3,3v8l-3,2c0,0-1-1-1-3v-7C20,41,21,40,21,40z'/>
+                                    <path id='b1' d='M22,39l3,3h6l3-3c0,0-1-1-3-1h-6C23,38,22,39,22,39z'/>
+                                </g>
+                                <g>
+                                    <path id='a7' d='M4,69l3-3h6l3,3c0,0-1,1-3,1h-6C5,70,4,69,4,69z'/>
+                                    <path id='a6' d='M17,55l-3,2v8l3,3c0,0,1-1,1-3v-7C18,56,17,55,17,55z'/>
+                                    <path id='a5' d='M3,55l3,2v8l-3,3c0,0-1-1-1-3v-7C2,56,3,55,3,55z'/>
+                                    <polygon id='a4' points='7,52 13,52 16,54 13,56 7,56 4,54'/>
+                                    <path id='a3' d='M17,40l-3,3v8l3,2c0,0,1-1,1-3v-7C18,41,17,40,17,40z'/>
+                                    <path id='a2' d='M3,40l3,3v8l-3,2c0,0-1-1-1-3v-7C2,41,3,40,3,40z'/>
+                                    <path id='a1' d='M4,39l3,3h6l3-3c0,0-1-1-3-1h-6C5,38,4,39,4,39z'/>
+                                </g>
+                            </g>
+                            <g id='dots'>
+                                <g>
+                                    <circle cx='82' cy='50' r='2'/>
+                                    <circle cx='82' cy='58' r='2'/>
+                                </g>
+                                <g>
+                                    <circle cx='40' cy='50' r='2'/>
+                                    <circle cx='40' cy='58' r='2'/>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="board-body">
+
+        </div>
+    </div>
+</div>
 
 <div class="dark-wrapper" id="loading-wrapper" style="display: none">
     <div class="loading-wrapper">
@@ -21,7 +124,7 @@
 </div>
 
 <script type="module" src="./main.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js" integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="module" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="module" src="node_modules/jquery/dist/jquery.min.js"></script>
 </body>
 </html>

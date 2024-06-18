@@ -3,12 +3,14 @@
     "serve": "npx vite",
     "build": "npx vite build"
   },
+  "type": "module",
   "dependencies": {
     "bootstrap": "^5.3.2",
     "bootstrap-icons": "^1.11.3",
     "jquery": "^3.7.1"
   },
   "devDependencies": {
+    "sass": "^1.77.4",
     "vite": "^5.0.11"
   }
 }
