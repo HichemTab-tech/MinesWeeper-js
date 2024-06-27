@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MinesWeeper</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <script type="module" crossorigin src="/assets/index.9gznJy1p.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BcLjoRXf.css">
+</head>
+<body>
+
+<div class="board-wrapper">
+    <div class="board">
+        <div class="separator separator-x separator-up"></div>
+        <div class="separator separator-x separator-down inner"></div>
+        <div class="board-head py-2 px-3">
+            <div class="separator separator-y separator-right-white-l left-side-s"></div>
+            <div class="separator separator-y separator-right-white-r left-side-s"></div>
+            <div class="left-side">
+                <div class="mines-number-wrapper me-2">
+                    <div class="mines-number seven-segments">
+
+                    </div>
+                </div>
+                <div class="actions-wrapper">
+                    <div class="action-settings">
+                        <div class="dropdown">
+                            <button class="btn" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="bi bi-gear-fill"></i>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <h6 class="dropdown-header">Difficulty</h6>
+                                <a class="dropdown-item" data-difficulty="easy" href="#">Easy</a>
+                                <a class="dropdown-item" data-difficulty="medium" href="#">Medium</a>
+                                <a class="dropdown-item" data-difficulty="hard" href="#">Hard</a>
+                                <a class="dropdown-item" data-difficulty="impossible" href="#">Impossible</a>
+                                <div class="dropdown-divider"></div>
+                                <h6 class="dropdown-header">Size</h6>
+                                <a class="dropdown-item" data-size="extra-small" href="#">Extra Small</a>
+                                <a class="dropdown-item" data-size="small" href="#">Small</a>
+                                <a class="dropdown-item" data-size="medium" href="#">Medium</a>
+                                <!--<a class="dropdown-item" data-size="large" href="#">Large</a>
+                                <a class="dropdown-item" data-size="extra-large" href="#">Extra Large</a>
+                                <a class="dropdown-item" data-size="custom" href="#">Custom</a>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="middle-side">
+                <div class="restart-btn-wrapper">
+                    <img src="data:image/svg+xml,%3c!--%20This%20SVG%20has%20been%20created%20entirely%20by%20HichemTab-tech%20and%20does%20not%20derive%20from%20any%20other%20works.%20--%3e%3csvg%20width='100'%20height='100'%20viewBox='0%200%20100%20100'%20xmlns='http://www.w3.org/2000/svg'%3e%3c!--%20Yellow%20face%20--%3e%3ccircle%20cx='50'%20cy='50'%20r='40'%20fill='yellow'%20stroke='black'%20stroke-width='3'/%3e%3c!--%20Eyes%20--%3e%3crect%20x='35'%20y='35'%20width='5'%20height='10'%20fill='black'/%3e%3crect%20x='60'%20y='35'%20width='5'%20height='10'%20fill='black'/%3e%3c!--%20Mouth%20--%3e%3cpath%20d='M35%2060%20Q50%2075%2065%2060'%20stroke='black'%20stroke-width='3'%20fill='none'/%3e%3c/svg%3e" alt="happy face" class="restart-btn-img">
+                    <img src="data:image/svg+xml,%3c!--%20This%20SVG%20has%20been%20created%20entirely%20by%20HichemTab-tech%20and%20does%20not%20derive%20from%20any%20other%20works.%20--%3e%3csvg%20width='100'%20height='100'%20viewBox='0%200%20100%20100'%20xmlns='http://www.w3.org/2000/svg'%3e%3c!--%20Yellow%20face%20--%3e%3ccircle%20cx='50'%20cy='50'%20r='40'%20fill='yellow'%20stroke='black'%20stroke-width='3'/%3e%3c!--%20Eyes%20(crosses)%20--%3e%3cline%20x1='35'%20y1='35'%20x2='45'%20y2='45'%20stroke='black'%20stroke-width='3'/%3e%3cline%20x1='35'%20y1='45'%20x2='45'%20y2='35'%20stroke='black'%20stroke-width='3'/%3e%3cline%20x1='55'%20y1='35'%20x2='65'%20y2='45'%20stroke='black'%20stroke-width='3'/%3e%3cline%20x1='55'%20y1='45'%20x2='65'%20y2='35'%20stroke='black'%20stroke-width='3'/%3e%3c!--%20Mouth%20(sad)%20--%3e%3cpath%20d='M35%2065%20Q50%2050%2065%2065'%20stroke='black'%20stroke-width='3'%20fill='none'/%3e%3c/svg%3e" alt="dead face" class="restart-btn-img dead">
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="switch-marker-btn-wrapper">
+                    <div class="switch-marker-btn">
+                        <div class="marker-mode marker-mode-flag">
+                            <img src="data:image/svg+xml,%3c!--%20This%20SVG%20has%20been%20created%20entirely%20by%20HichemTab-tech%20and%20does%20not%20derive%20from%20any%20other%20works.%20--%3e%3csvg%20width='100'%20height='100'%20viewBox='0%200%20100%20100'%20xmlns='http://www.w3.org/2000/svg'%3e%3c!--%20Flagpole%20base%20--%3e%3crect%20x='35'%20y='70'%20width='30'%20height='10'%20fill='black'/%3e%3crect%20x='40'%20y='60'%20width='20'%20height='10'%20fill='black'/%3e%3crect%20x='45'%20y='50'%20width='10'%20height='10'%20fill='black'/%3e%3c!--%20Flagpole%20--%3e%3crect%20x='47.5'%20y='10'%20width='5'%20height='40'%20fill='black'/%3e%3c!--%20Flag%20--%3e%3cpolygon%20points='47.5,10%2047.5,40%2010,25'%20fill='red'/%3e%3c/svg%3e" alt="flag logo">
+                        </div>
+                        <div class="marker-mode marker-mode-seeker selected">
+                            <img src="data:image/svg+xml,%3csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2084.6%2084.6'%3e%3ctitle%3eboss-icons-liny-export%3c/title%3e%3cpath%20d='M82.1,39.8H70.88a28.53,28.53,0,0,0-6.6-16l2.54-2.53a2.5,2.5,0,1,0-3.54-3.53l-2.53,2.53a28.53,28.53,0,0,0-16-6.6V2.5a2.5,2.5,0,0,0-5,0V13.71a28.47,28.47,0,0,0-15.94,6.61l-2.53-2.53a2.5,2.5,0,0,0-3.54,3.53l2.54,2.54A28.47,28.47,0,0,0,13.72,39.8H2.5a2.5,2.5,0,0,0,0,5H13.72a28.68,28.68,0,0,0,6.6,15.94l-2.53,2.53a2.52,2.52,0,0,0,0,3.54,2.51,2.51,0,0,0,3.54,0l2.53-2.53a28.68,28.68,0,0,0,15.94,6.6V82.1a2.5,2.5,0,0,0,5,0V70.88a28.47,28.47,0,0,0,15.94-6.61l2.54,2.54a2.49,2.49,0,0,0,1.77.73,2.45,2.45,0,0,0,1.76-.73,2.5,2.5,0,0,0,0-3.54l-2.53-2.53A28.47,28.47,0,0,0,70.89,44.8H82.1a2.5,2.5,0,0,0,0-5Zm-42.75-4a5.92,5.92,0,0,1-3.57,3.5,5.81,5.81,0,0,1-2,.37,6,6,0,0,1-6-6,5.83,5.83,0,0,1,.37-2A5.91,5.91,0,0,1,31.57,28a5.76,5.76,0,0,1,2.16-.41,6,6,0,0,1,6,6A5.76,5.76,0,0,1,39.35,35.81Z'/%3e%3c/svg%3e" alt="bombe logo">
+                        </div>
+                    </div>
+                </div>
+                <div class="time-passing-wrapper ms-2">
+                    <div class="time-passing seven-segments">
+
+                    </div>
+                </div>
+            </div>
+            <div class="separator separator-y separator-left-white-l right-side-s"></div>
+            <div class="separator separator-y separator-left-white-r right-side-s"></div>
+        </div>
+        <div class="separator separator-x separator-up inner"></div>
+        <div class="separator separator-x separator-down inner"></div>
+        <div class="board-body">
+            <div class="separator separator-y separator-right-white-l left-side-s"></div>
+            <div class="separator separator-y separator-right-white-r left-side-s"></div>
+            <div class="cells-wrapper" style="width: 300px;height: 600px">
+
+            </div>
+            <div class="separator separator-y separator-left-white-l right-side-s"></div>
+            <div class="separator separator-y separator-left-white-r right-side-s"></div>
+        </div>
+        <div class="separator separator-x separator-up inner"></div>
+        <div class="separator separator-x separator-down"></div>
+    </div>
+</div>
+
+<div class="dark-wrapper" id="loading-wrapper" style="display: none">
+    <div class="loading-wrapper">
+
+    </div>
+</div>
+
+</body>
+</html>
