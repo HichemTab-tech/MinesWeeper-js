@@ -10,6 +10,7 @@ aliasesStrings.forEach(alias => {
 
 // noinspection JSUnusedGlobalSymbols
 export default defineConfig({
+    base: './',
     build: {
         rollupOptions: {
             input: path.resolve(__dirname, 'index.html'),

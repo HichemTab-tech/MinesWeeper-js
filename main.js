@@ -1,4 +1,5 @@
 import '@minesweeper/scss/style.scss';
+import 'jquery';
 import 'tickwatchjs';
 import * as svgs from './src/js/svgs.js';
 
