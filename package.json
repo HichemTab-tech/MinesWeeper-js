@@ -7,7 +7,8 @@
   "dependencies": {
     "bootstrap": "^5.3.2",
     "bootstrap-icons": "^1.11.3",
-    "jquery": "^3.7.1"
+    "jquery": "^3.7.1",
+    "tickwatchjs": "^1.1.1"
   },
   "devDependencies": {
     "sass": "^1.77.4",

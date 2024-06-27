@@ -5,7 +5,7 @@ const aliasesStrings = ['js', 'scss'];
 
 const aliases = {};
 aliasesStrings.forEach(alias => {
-    aliases[`@${alias}`] = path.resolve(__dirname, `src/${alias}/`);
+    aliases[`@minesweeper/${alias}`] = path.resolve(__dirname, `src/${alias}/`);
 });
 
 // noinspection JSUnusedGlobalSymbols
